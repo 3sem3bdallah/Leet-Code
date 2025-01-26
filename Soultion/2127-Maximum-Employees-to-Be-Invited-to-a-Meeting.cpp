@@ -53,7 +53,6 @@ public:
                 }
             }
         }
-
         return max(longestCycle, twoCycleInvitations);
     }
 };
