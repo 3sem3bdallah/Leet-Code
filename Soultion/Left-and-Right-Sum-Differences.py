@@ -1,11 +1,12 @@
 1class Solution:
 2    def leftRightDifference(self, nums: List[int]) -> List[int]:
-3        n = len(nums)
-4        res = [0] * n
-5
-6        for i in range(n):
-7            left = sum(nums[:i])
-8            right = sum(nums[i+1:])
-9            res[i] = abs(left - right)
-10
-11        return res
+3        total = sum(nums)
+4        left = 0
+5        ans = []
+6
+7        for x in nums:
+8            total -= x       # right sum
+9            ans.append(abs(left - total))
+10            left += x
+11
+12        return ans
